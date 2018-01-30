@@ -15,48 +15,9 @@ class Item{
  
 @Component({
     selector: 'todolist-app',
-    template: `
-    <div class="page-header">
-        <h1> To Do List </h1>
-    </div>
-    <div class="panel">
-        <div class="form-inline">
-            <div class="form-group">
-                <div class="col-sm-6">
-                    <input class="form-control" [(ngModel)]="text" placeholder = "Задание" />
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-6 ">
-                    <input type="date" class="form-control" [(ngModel)]="date" placeholder = "YYYY-MM-DD" />
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-6">
-                    <button class="btn btn-outline-primary" (click)="addItem(text,date)">Добавить</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container col-xs-10 ">
-        <div *ngFor="let item of items" class="row">
-            <div class="col-xs-1 ">
-                <input type="checkbox" [(ngModel)]="item.done" />
-            </div>
-            <div class="col-xs-5 ">
-                <p>{{item.task}}</p>
-            </div>
-            <div class="col-xs-5 ">
-                <p>{{item.date}}</p>
-            </div>
-            <div class="col-xs-1 ">
-                <button type="button" class="close"  aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </div>  
-    </div>
-    `
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']    
+
 })
 export class AppComponent { 
     items: Item[] = 
