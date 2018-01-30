@@ -26,10 +26,7 @@ export class AppComponent {
         { task: "sleep", done: false, date: "2018-01-01" }
     ];
     addItem(text: string, date: string): void {
-
-        if(text==null || text==undefined || text.trim()=="")
-            return;
-            if(date==null || date==undefined)
+        if(!text || !date)
             return;
         this.items.push(new Item(text,date));
     }
