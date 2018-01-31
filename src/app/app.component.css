@@ -36,23 +36,22 @@ body{
 	display:flex;
 	justify-content:center;
 	height: 30px;
-
 }
 
 .task{
-	flex:6 1 500px;
+	flex:4 1 auto;
 	border: 1px solid #e8e8e8;
 	border: 1px solid #e8e8e8;
 }
 
 .date-task{
-	flex:4 1 300px;
+	flex:4 1 auto;
 	background-color: #b7fded4f;
     border: 1px solid #b7fded4f;
 }
 
 .add-task-btn{
-    flex:2 1 150px;
+    flex:2 1 auto;
     background-color: #8fff8f69;
     border: 1px solid #8fff8f69;
     cursor: pointer;
@@ -97,10 +96,19 @@ body{
 	margin: auto;
 }
 
-/* .delete-task{
+.task-box.complite{
+	background-color: #8fff8f69;
+	border: 1px solid #8fff8f69;
+}
+
+.delete-task{
     flex:1 1 50px;
 }
 
 .delete-task button{
 	margin: auto;
-} */
+	width: 26px;
+	border-radius: 50%;
+	color:red;
+	border: 3px solid red;
+}

@@ -3,14 +3,14 @@
 	    <h1> To Do List </h1>
 	</div>
 	<div class="form-group">
-	    <input class="task" [(ngModel)]="text" placeholder = "Задание" />
+	    <input class="task" [(ngModel)]="text" placeholder = "Task" />
 	    <input type="date" class="date-task" [(ngModel)]="date" placeholder = "YYYY-MM-DD" />
-	    <button class="add-task-btn" (click)="addItem(text,date)">Добавить</button>
+	    <button class="add-task-btn" (click)="addItem(text,date)">Add</button>
 	</div>
 	<div  class="task-container">
-		<div *ngFor="let item of items" class="task-box">
+		<div *ngFor="let item of items" class="task-box" [class.complite]="item.done">
 		    <div class="item-checkbox ">
-		        <input type="checkbox" [(ngModel)]="item.done" />
+		        <input type="checkbox" (click)="checkTask(item)" [(ngModel)]="item.done" />
 		    </div>
 		    <div class="item-task ">
 		        <p>{{item.task}}</p>
@@ -18,11 +18,11 @@
 		    <div class="item-date">
 		        <p>{{item.date}}</p>
 		 	</div>
-		    <!-- <div class="delete-task ">
-		        <button type="button" class="delete-task-btn"  aria-label="Close">
+		    <div class="delete-task ">
+		        <button type="button" class="delete-task-btn" (click)="removeTask(item)" aria-label="Close">
 		            &times;
 		        </button>
-		    </div> -->
+		    </div>
 		</div>    
 	</div>
 </div>
