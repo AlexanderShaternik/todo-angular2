@@ -1,0 +1,5 @@
+<div class="form-group">
+    <input class="task" [(ngModel)]="text" placeholder = "Task" />
+    <input type="date" class="date-task" [(ngModel)]="date" placeholder = "YYYY-MM-DD" />
+    <button class="add-task-btn" (click)="addItem(text,date)">Add</button>
+</div>

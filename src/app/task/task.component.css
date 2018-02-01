@@ -1,0 +1,51 @@
+
+.task-box{
+    display: flex;
+    flex-direction: row;
+    background-color: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    margin:2px 0
+}
+
+.item-checkbox,.item-task,.item-date,.delete-task{
+    display: flex;
+    height: 30px;
+    align-items:center;
+}
+
+.item-checkbox{
+    flex:1 1 50px;
+}
+
+.item-checkbox input{
+    margin: auto;
+}
+
+.item-task{
+    flex:10 1 500px;
+}
+.item-date{
+    flex:4 1 150px;
+}
+
+.item-date p{
+    margin: auto;
+}
+
+.task-box.complite{
+    background-color: #8fff8f69;
+    border: 1px solid #8fff8f69;
+}
+
+.delete-task{
+    flex:1 1 50px;
+}
+
+.delete-task button{
+    margin: auto;
+    width: 24px;
+    border-radius: 50%;
+    color:red;
+    border: 2px solid red;
+}
