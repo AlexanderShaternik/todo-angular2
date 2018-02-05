@@ -1,6 +1,6 @@
-import { Component,EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { Item } from '../shared/item'
-
+import { TodoService } from '../todo.service'
 
 @Component({
     selector: 'new-task',
@@ -8,14 +8,10 @@ import { Item } from '../shared/item'
     styleUrls: ['./newtask.component.css']
 })
 
-export class NewTaskComponent { 
+export class NewTaskComponent  { 
     item={};
-    @Output() onChanged = new EventEmitter<{}>();
+    constructor(private todoService:TodoService){}
     addItem(text: string, date: string) {
-        if(!text || !date) return;
-        console.log(text,date);
-        this.item = new Item(text,date);
-        this.onChanged.emit(this.item);
-    }
-   
+       this.todoService.addNewItem(text,date);
+    } 
 }

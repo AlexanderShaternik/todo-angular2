@@ -8,11 +8,7 @@ import { items }    from './shared/data';
     styleUrls: ['./app.component.css']    
 })
 
-export class AppComponent  { 
-    items:Item[] = items;
-    onChanged(item:Item){
-        console.log(item);
-        this.items.push(item);
-    }
+export class AppComponent  {
+    title:string = "To Do List"; 
 }
 
