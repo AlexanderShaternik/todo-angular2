@@ -1,4 +1,7 @@
 <div  class="task-container">
-    <task *ngFor="let item of items" [item]="item" (delete)=delete($event)>
+    <task *ngFor="let item of items;let i = index" [item]="item" (delete)=delete($event)>
     </task>
+    <button type="button" class="clear-btn" (click)="onClear(items)" >Clear</button>
+    <button type="button" class="local-storage-btn" (click)="onSaveToStorage(items)" >Save to localStorage</button>
+    <button type="button" class="local-storage-btn" (click)="onUnloadToStorage(items)">Unload from localStorage</button>
 </div>

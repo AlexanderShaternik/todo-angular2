@@ -12,6 +12,6 @@ export class NewTaskComponent  {
     item={};
     constructor(private todoService:TodoService){}
     addItem(text: string, date: string) {
-       this.todoService.addNewItem(text,date);
+       this.todoService.setItem(text,date);
     } 
 }
