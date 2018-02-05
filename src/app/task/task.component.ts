@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { IItem }  from  '../app.component';
+import { Component,Input,Output,EventEmitter } from '@angular/core';
+import { Item }      from '../shared/item';
 
 @Component({
     selector: 'task',
@@ -7,23 +7,14 @@ import { IItem }  from  '../app.component';
     styleUrls: ['./task.component.css']
 })
 
-export class Task { 
-    @Input() items:IItem[];
-    @Input() item:IItem;
-    checkTask(item:IItem){
-        item.done = !item.done;
-        for (let i = 0; i < this.items.length; i++) {
-            if(this.items[i] == item){
-                this.items.splice(i,1);
-                this.items.push(item);
-            } 
-        } 
-    };
-    removeTask(item:IItem){
-        for (let i = 0; i < this.items.length; i++) {
-            if(this.items[i] == item){
-                this.items.splice(i,1);
-            } 
-        } 
+export class TaskComponent { 
+    @Input() item:Item;
+    @Output() delete= new EventEmitter();
+    onDelete(){
+        this.delete.emit(this.item);
     }
+
+    checkTask(item:Item){
+        this.item.done = !this.item.done;
+    };
 }

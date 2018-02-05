@@ -1,6 +1,6 @@
 <div class="task-box" [class.complite]="item.done">
     <div class="item-checkbox ">
-        <input type="checkbox" (click)="checkTask(item)" [(ngModel)]="item.done" />
+        <input type="checkbox" (click)="checkTask()" [(ngModel)]="item.done" />
     </div>
     <div class="item-task ">
         <p>{{item.task}}</p>
@@ -9,7 +9,7 @@
         <p>{{item.date}}</p>
      </div>
     <div class="delete-task ">
-        <button type="button" class="delete-task-btn" (click)="removeTask(item)" aria-label="Close">
+        <button type="button" class="delete-task-btn" (click)="onDelete()" aria-label="Close">
             &times;
         </button>
     </div>

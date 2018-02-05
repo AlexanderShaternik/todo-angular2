@@ -1,0 +1,4 @@
+<div  class="task-container">
+    <task *ngFor="let item of items" [item]="item" (delete)=delete($event)>
+    </task>
+</div>

@@ -2,10 +2,8 @@
 	<div class="header">
 	    <h1> To Do List </h1>
 	</div>
-	<new-task [items]="items">	
+	<new-task  (onChanged)="onChanged($event)" >	
 	</new-task>
-	<div  class="task-container">
-		<task *ngFor="let item of items;" [item]="item" [items]="items" >
-		</task>
-	</div>
+	<list [items]="items" >
+	</list>
 </div>
