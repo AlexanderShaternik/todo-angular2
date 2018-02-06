@@ -2,12 +2,28 @@
     display: flex;
     margin: 20px;
     justify-content:center;
+    position: relative;
 }
+
+input.ng-touched.ng-invalid {border:solid red 2px;}
+input.ng-touched.ng-valid {border:solid green 2px;}
 
 .task,.add-task-btn,.date-task,.save-btn,.clear-btn{
     display:flex;
     justify-content:center;
     height: 30px;
+}
+.alert-danger-date{
+    position: absolute;
+    top:30px;
+    left:308px;
+    padding: 3px 10px; 
+}
+.alert-danger-task{
+    position: absolute;
+    top:30px;
+    left:0px;
+    padding: 3px 10px;
 }
 
 .task{

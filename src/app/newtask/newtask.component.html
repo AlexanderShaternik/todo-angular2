@@ -1,5 +1,15 @@
-<div class="form-group" >
-    <input class="task" [(ngModel)]="text" placeholder = "Task" />
-    <input class="date-task" type="date"  [(ngModel)]="date" placeholder = "YYYY-MM-DD" />
-    <button class="add-task-btn"  (click)="addItem(text,date)">Add</button>
-</div>
+<form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+    <div class="form-group" >
+            <input class="task form-control" name="task" formControlName="userTask"  placeholder = "Task" />
+            <div class="alert alert-danger alert-danger-task "
+                *ngIf="myForm.controls['userTask'].invalid && myForm.controls['userTask'].touched">
+                Incorrect task 
+            </div>
+        <input class="date-task form-control" name="date" formControlName="userDate" type="date" placeholder = "YYYY-MM-DD" />
+            <div class="alert alert-danger alert-danger-date"
+                *ngIf="myForm.controls['userDate'].invalid && myForm.controls['userDate'].touched">
+                Incorrect date 
+            </div>        
+        <button class="add-task-btn btn btn-default" [disabled]="myForm.invalid" >Add</button>
+    </div> 
+</form>

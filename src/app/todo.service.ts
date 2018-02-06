@@ -24,7 +24,7 @@ export class TodoService{
     }
 
     // setItems(items:Item[]){
-    //     this.items= items
+    //     this.items = items;
     // }
     
     unloadFromStorage(items:Item[]){

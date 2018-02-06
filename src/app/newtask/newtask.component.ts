@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Item } from '../shared/item'
 import { TodoService } from '../todo.service'
+import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { AbstractControl } from '@angular/forms/src/model';
 
 @Component({
     selector: 'new-task',
@@ -10,8 +12,32 @@ import { TodoService } from '../todo.service'
 
 export class NewTaskComponent  { 
     item={};
-    constructor(private todoService:TodoService){}
-    addItem(text: string, date: string) {
-       this.todoService.setItem(text,date);
-    } 
+
+    // myForm : FormGroup = new FormGroup({    
+    //     "userTask": new FormControl("",Validators.required),
+    //     "userDate": new FormControl("",Validators.required),
+    // })
+    // constructor(private todoService:TodoService){}
+
+    submit(){
+        console.log(this.myForm);
+        this.todoService.setItem(this.myForm.value.userTask,this.myForm.value.userDate);
+        this.myForm.reset();
+    }
+
+    myForm : FormGroup;
+    constructor(private todoService:TodoService){
+        this.myForm = new FormGroup({    
+            "userTask": new FormControl("",Validators.required),
+            "userDate": new FormControl("", [Validators.required, this.userDateValidator]),
+        })
+    }
+    
+    userDateValidator(control: FormControl): {[s:string]:boolean}{
+        if(2018 > +control.value.split('-')[0]){
+            return {"userDate": true};
+        }
+        return null;
+    }
+
 }

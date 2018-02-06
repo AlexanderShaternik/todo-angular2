@@ -14,7 +14,7 @@ export class TaskComponent {
         this.delete.emit(this.item);
     }
 
-    checkTask(item:Item){
+    checkTask(){
         this.item.done = !this.item.done;
     };
 }
