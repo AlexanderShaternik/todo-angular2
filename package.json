@@ -1,8 +1,8 @@
 {
     "name": "todolistapp",
     "version": "1.0.0",
-    "description": " Angular 5 Project",
-    "author": "Alexander",
+    "description": " Project",
+    "author": "Alexander Shaternik",
     "scripts": {
         "dev": "webpack-dev-server --hot --open",
         "build": "webpack"

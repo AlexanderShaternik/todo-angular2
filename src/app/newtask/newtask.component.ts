@@ -13,12 +13,6 @@ import { AbstractControl } from '@angular/forms/src/model';
 export class NewTaskComponent  { 
     item={};
 
-    // myForm : FormGroup = new FormGroup({    
-    //     "userTask": new FormControl("",Validators.required),
-    //     "userDate": new FormControl("",Validators.required),
-    // })
-    // constructor(private todoService:TodoService){}
-
     submit(){
         console.log(this.myForm);
         this.todoService.setItem(this.myForm.value.userTask,this.myForm.value.userDate);
